@@ -16,4 +16,32 @@ public class Subject {
         this.teachers = null;
         this.students = null;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Set<Teacher> getTeachers() {
+        return teachers;
+    }
+
+    public Set<String> getStudents() {
+        return students;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTeachers(Set<Teacher> teachers) {
+        this.teachers = teachers;
+    }
+
+    public void setStudents(Set<String> students) {
+        this.students = students;
+    }
+
+    public void addTeacher(Teacher teacher) {
+        this.teachers.add(teacher);
+    }
 }

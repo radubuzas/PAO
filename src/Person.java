@@ -5,7 +5,7 @@ public abstract class Person {
     protected String phoneNumber;
     protected String email;
     private static int numberOfPersons = 0;
-    private String username;
+    protected String username;
     protected String password;
 
     public Person(String CNP, String name, int dateOfBirth, String phoneNumber, String email, String username, String password) {
@@ -27,6 +27,17 @@ public abstract class Person {
         this.email = "";
         this.username = "";
         this.password = "";
+        numberOfPersons++;
+    }
+
+    public Person(Person person) {
+        this.CNP = person.CNP;
+        this.name = person.name;
+        this.dateOfBirth = person.dateOfBirth;
+        this.phoneNumber = person.phoneNumber;
+        this.email = person.email;
+        this.username = person.username;
+        this.password = person.password;
         numberOfPersons++;
     }
 

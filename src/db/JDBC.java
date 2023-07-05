@@ -8,9 +8,11 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import scripts.ScriptRunner;
+
 public class JDBC{
 
-    private static final String db = "grades121";
+    private static final String db = "test010111111111";
     private static final String url = "jdbc:mysql://localhost:3306/";
     private static final String uname = "root";
     private static final String pass = "radu2002";
@@ -78,28 +80,24 @@ public class JDBC{
 
     private static void createTables() throws Exception {
         String fileName = "src/db/create-tables.sql";
-        StringBuilder queryBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                queryBuilder.append(line).append("\n");
-            }
+        ScriptRunner scriptRunner = new ScriptRunner(con, false, false);
+        try {
+            scriptRunner.runScript(new BufferedReader(new FileReader(fileName)));
         } catch (Exception error) {
             System.out.println("Error reading SQL file: " + error.getMessage());
             System.exit(123);
         }
-        String sqlCommands = queryBuilder.toString();
-
-        try (Statement statement = con.createStatement()) {
-            boolean executeResult = statement.execute(sqlCommands);
-            if (!executeResult) {
-                System.out.println("Tables created successfully.");
-            } else {
-                System.out.println("Failed to create tables.");
-            }
-        } catch (SQLException error) {
-            System.out.println("Error executing SQL commands: " + error.getMessage());
-            System.exit(123);
-        }
+//        try (Statement statement = con.createStatement()) {
+//            System.out.println("Executing SQL commands: " + sqlCommands);
+//            boolean executeResult = statement.execute(sqlCommands);
+//            if (!executeResult) {
+//                System.out.println("Tables created successfully.");
+//            } else {
+//                System.out.println("Failed to create tables.");
+//            }
+//        } catch (SQLException error) {
+//            System.out.println("Error executing SQL commands: " + error.getMessage());
+//            System.exit(123);
+//        }
     }
 }

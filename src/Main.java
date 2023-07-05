@@ -1,27 +1,17 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.sql.*;
+import java.util.Scanner;
 
 import db.JDBC;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        Connection con = JDBC.getInstance();
+//        Connection con = JDBC.getInstance();
 
 
-
-
-//        while(rs.next()){
-//            System.out.println(rs.getInt(1));
-//        }
-
-//        Student s = new Student();
-//
-//        System.out.println(s.getGrade());
-
-
-        /*Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the School Management System!");
         System.out.println("Please choose an option:");
         System.out.println("1. Login");
@@ -34,9 +24,9 @@ public class Main {
                 String username = scanner.next();
                 System.out.println("Please enter your password:");
                 String password = scanner.next();
-                //check if the username and password are correct
-                //if they are correct, then go to the next menu
-                //if they are not correct, then go back to the first menu
+
+                
+
                 break;
             case 2:
                 System.out.println("Please enter your name:");
@@ -53,9 +43,8 @@ public class Main {
                 String username1 = scanner.next();
                 System.out.println("Please enter your password:");
                 String password1 = scanner.next();
-                //check if the username is already taken
-                //if it is taken, then go back to the first menu
-                //if it is not taken, then go to the next menu
+
+                Person admin = new Admin(CNP, name, dateOfBirth, phoneNumber, email, username1, password1);
                 break;
             case 3:
                 System.out.println("Thank you for using the School Management System!");
@@ -63,6 +52,6 @@ public class Main {
             default:
                 System.out.println("Invalid option!");
                 break;
-        }*/
+        }
     }
 }
