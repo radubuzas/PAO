@@ -1,3 +1,4 @@
+import java.sql.Connection;
 class Student extends Person {
     private int grade;
     private String school;
@@ -20,6 +21,7 @@ class Student extends Person {
     public int getGrade() {
         return grade;
     }
+
     public void setGrade(int grade) {
         this.grade = grade;
     }
@@ -27,6 +29,7 @@ class Student extends Person {
     public String getSchool() {
         return school;
     }
+
     public void setSchool(String school) {
         this.school = school;
     }

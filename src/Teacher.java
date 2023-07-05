@@ -1,53 +1,42 @@
-class Teacher extends Person {
-    private List<String> subjects;
-    private List<String> schools;
-    private List<String> classGroups;
+// i want to import all classes that ive done in the project
+import java.util.Set;
 
-    public Teacher(String CNP, String name, int dateOfBirth, String phoneNumber, String email, String username, String password, List<String> subjects, List<String> schools, List<String> classGroups) {
+class Teacher extends Person {
+    private Set<Subject> subjects;
+    private Set<String> classGroups;
+
+    public Teacher(String CNP, String name, int dateOfBirth, String phoneNumber, String email, String username, String password, Set<Subject> subjects, Set<String> classGroups) {
         super(CNP, name, dateOfBirth, phoneNumber, email, username, password);
         this.subjects = subjects;
-        this.schools = schools;
         this.classGroups = classGroups;
     }
 
     public Teacher() {
         super();
         this.subjects = null;
-        this.schools = null;
         this.classGroups = null;
     }
 
-    public List<String> getSubjects() {
+    public Set<Subject> getSubjects() {
         return subjects;
     }
 
-    public void setSubject(List<String> subjects) {
+    public void setSubject(Set<Subject> subjects) {
         this.subjects = subjects;
     }
 
-    public void addSubject(String subject) {
+    public void addSubject(Subject subject) {
         this.subjects.add(subject);
     }
 
-    public void removeSubject(String subject) {
+    public void removeSubject(Subject subject) {
         this.subjects.remove(subject);
     }
 
-    public List<String> getSchools() {
-        return schools;
-    }
-    public void setSchools(List<String> schools) {
-        this.schools = schools;
-    }
-
-    public void addSchool(String school) {
-        this.schools.add(school);
-    }
-
-    public List<String> getClassGroups() {
+    public Set<String> getClassGroups() {
         return classGroups;
     }
-    public void setClassGroups(List<String> classGroups) {
+    public void setClassGroups(Set<String> classGroups) {
         this.classGroups = classGroups;
     }
 
@@ -64,6 +53,6 @@ class Teacher extends Person {
         return "CNP: " + this.getCNP() + "Name: " + this.getName() + "Date of birth: " + this.getDateOfBirth()
                 + "Phone number: " + this.getPhoneNumber() + "Email: " + this.getEmail()
                 + "Username: " + this.getUsername() + "Password: " + this.getPassword() + "Subject: " + this.getSubjects()
-                + "School: " + this.getSchools() + "Class group: " + this.getClassGroups();
+                + "Class group: " + this.getClassGroups();
     }
 }

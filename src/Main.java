@@ -1,11 +1,27 @@
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.sql.*;
 
-//import from all the classes
+import db.JDBC;
+
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
+
+        Connection con = JDBC.getInstance();
+
+
+
+
+//        while(rs.next()){
+//            System.out.println(rs.getInt(1));
+//        }
+
+//        Student s = new Student();
+//
+//        System.out.println(s.getGrade());
+
+
+        /*Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the School Management System!");
         System.out.println("Please choose an option:");
         System.out.println("1. Login");
@@ -47,6 +63,6 @@ public class Main {
             default:
                 System.out.println("Invalid option!");
                 break;
-        }
+        }*/
     }
 }
